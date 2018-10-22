@@ -16,17 +16,23 @@ References: https://academic.oup.com/nar/article/37/16/5365/2409859
 
 ## Procedures:
 
-You may get a file from genotyping center such like Illumina which includes SNP name, sample ID, B allele frequency, Log R Ratio and some 
-other information. Here we only need SNP name, sample ID, B allele frequency and Log R Ratio. It is usually a very large file. We need to 
-subset this file based on each sample. You can use the subset.r script here to subset this file. (Please rename the header of your raw file to Name, SampleID, Chr, Position, B Allele Freq, Log R Ratio)
+You may get a file from genotyping center such like Illumina which includes SNP name, sample ID, B allele frequency, Log R Ratio, Chromosome, Physical position and some other information. Here we only need SNP name, sample ID, B allele frequency and Log R Ratio. 
 
-Input files: You can use the rscipts here to prepare these input files.
+It is usually a very large file. We need to subset this file based on each sample. You can use both the subset_sample.r script or subset_sample.sh here to subset this file, but I recommand to use subset_sample.sh script since it takes long time to read the original data in R (Please rename the header of your raw file to Name, SampleID, Chr, Position, B Allele Freq, Log R Ratio if using subset.r). 
+
+We always focus on a specific region on a specific chromosome, subset_chr.sh is used to select the specific chromosome and select the specific region users defined.
+
+Input files: You can use the rscipts ans shellscripts here to prepare these input files.
 
 * snpdata which includes the name, Log R Ratio and B allele Frequency of each snp.
 
 * snpinfo which includes the name, chromosome, physical position, population frequency of B allele.
 
+1. Run commandArgs.R before running any R scripts
+2. subset_chr.sh is used to select the specific chromosome and select the specific region for all samples and to get a file used in        calculating PFB
+3. cal_PFB is used to calculate the population B allele Frequency and to get the snpinfo file， you need to run subset_chr.sh and to get 
+   a region specified for all samples file before running this script
+4. subset_sample.R or subset_sample.sh is used to subset samples
+5. genoCN.R is used to apply the genoCN package.
 
-1. Run cal_PFB to calculate the population B allele Frequency
-2. Run subset.r to subset the raw intensity file
-3. Run
+
