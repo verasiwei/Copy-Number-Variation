@@ -3,7 +3,7 @@
 #October, 2018
 
 #example 
-#Rscript genoCNV.R "home directory where you saved your raw data"
+#Rscript subset.R "home directory where you saved your raw data"
 #example of the columns you want to select:
 #"Name","Chr","Position","B Allele Freq","Log R Ratio"
 
