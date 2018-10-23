@@ -4,11 +4,11 @@
 
 #============users to be edited
 #full path of the raw data is
-sourcedata="/scratch/zhans23/siwei/CNV/chr9_region_user.txt"
+sourcedata=""
 #full path of the directory where you want to save the outputs and results
-directory="/scratch/zhans23/siwei/CNV/"
+directory=""
 #the full path of the directory where you want to save the split sample files
-splitsample="/scratch/zhans23/siwei/CNV/chr9_region_user.txt/allfiles/"
+splitsample=""
 
 #to find unique sample ID(long time)
 #gawk '!seen[$2]++' ${sourcedata}> ${directory}samplelist 

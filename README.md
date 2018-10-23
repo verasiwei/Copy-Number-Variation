@@ -33,9 +33,11 @@ Input files: You can use the rscipts ans shellscripts here to prepare these inpu
 2. subset_sample.R or subset_sample.sh is used to subset samples and to get separte sample files
 3. cal_PFB is used to calculate the population B allele Frequency and to get the snpinfo file， you need to run subset_chr.sh to get a region specified for all samples file and run subset_sample.R or subset_sample.sh to get the separate sample files before running this script
 
-##Identify CNV
+## Identify CNV
 
 1. commandArgs.R is used for users to input the directories
-2. genoCN.R is used to apply the genoCN package.
+2. plotCN.R is used to plot.
+3. genoCN.r is used to identify genoCN
+
 
 
