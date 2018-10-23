@@ -17,6 +17,9 @@ homedir<-readLines(con="stdin",1)
 cat("The full path of your result directory where you want to save the outputs is need, please enter: ")
 resultdir<-readLines(con="stdin",1)
 
+cat("The full path of your result directory where you want to save the separate sample files, please enter: ")
+folder<-readLines(con="stdin",1)
+
 
 
 
