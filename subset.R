@@ -11,7 +11,7 @@ args=commandArgs(TRUE)
 options(scipen = 999)
 homedir=args[1]
 resultdir=args[2]
-source(paste(homedir,"commandArgs.r",sep = ""))
+#source(paste(homedir,"commandArgs.r",sep = ""))
 
 #
 #separate the sigintensityall.txt into each sample
@@ -31,7 +31,7 @@ subsetfunction<-function(orig_snpdata,select_name){
     listfiles=c(listfiles,savename)
   }
   listfiles=data.frame(listfiles)
-  return(listfiles)
+  return(listfiles=listfiles)
 }
 
 cat("The full path of the file: ")

@@ -1,6 +1,5 @@
 # Copy-Number-Variation
 
-
 Copy number variation (CNV) is a phenomenon that the number of a section of a chromosome is different from the expected number of copies due
 to duplication or deletion, of which can be ranged from kb to Mb base on the genetic distance. 
 
@@ -28,11 +27,15 @@ Input files: You can use the rscipts ans shellscripts here to prepare these inpu
 
 * snpinfo which includes the name, chromosome, physical position, population frequency of B allele.
 
-1. Run commandArgs.R before running any R scripts
-2. subset_chr.sh is used to select the specific chromosome and select the specific region for all samples and to get a file used in        calculating PFB
-3. cal_PFB is used to calculate the population B allele Frequency and to get the snpinfo file， you need to run subset_chr.sh and to get 
-   a region specified for all samples file before running this script
-4. subset_sample.R or subset_sample.sh is used to subset samples
-5. genoCN.R is used to apply the genoCN package.
+## Prepare Input Data Files
+
+1. subset_chr.sh is used to select the specific chromosome and select the specific region for all samples and to get a file used in calculating PFB
+2. subset_sample.R or subset_sample.sh is used to subset samples and to get separte sample files
+3. cal_PFB is used to calculate the population B allele Frequency and to get the snpinfo file， you need to run subset_chr.sh to get a region specified for all samples file and run subset_sample.R or subset_sample.sh to get the separate sample files before running this script
+
+##Identify CNV
+
+1. commandArgs.R is used for users to input the directories
+2. genoCN.R is used to apply the genoCN package.
 
 

@@ -9,32 +9,36 @@ args=commandArgs(TRUE)
 options(scipen = 999)
 homedir=args[1]
 resultdir=args[2]
-source(paste(homedir,"commandArgs.R",sep = ""))
+folder=args[3]
+#source(paste(homedir,"commandArgs.R",sep = ""))
 
 
 #calculate PFB
 
-cal_PFB=function(orig_snpdata){
+cal_PFB=function(orig_snpdata,onesample){
   pfb<-tapply(orig_snpdata[,"B Allele Freq"], 
            list(orig_snpdata$Name), mean,na.rm=TRUE)
   
-  snpinfo<-data.frame(cbind(pfb,orig_snpdata$Chr,orig_snpdata$Position))
+  snpinfo<-data.frame(cbind(pfb,onesample$Chr,onesample$Position))
   snpinfo$Name=rownames(snpinfo)
   colnames(snpinfo)=c("PFB","Chr","Position","Name")
   snpinfo=snpinfo[,c("Name","PFB","Chr","Position")]
-  
-  return(snpinfo)
+  write.table(snpinfo,
+            paste(resultdir,"snpinfo",sep=""),
+            row.names=FALSE,quote = FALSE,sep = "\t")
+  return(snpinfodata=snpinfo)
 }
 
 cat("The full path of the file: ")
 rawdata<-readLines(con="stdin",1)
+cat("The full path of the onesample file: ")
+rawonesample<-readLines(con="stdin",1)
 
-orig_snpdata<-read.table(rawdata,header = FALSE,sep="\t")
-colnames(orig_snpdata)=c("Name","Sample","Chr","Position","B Allele Freq","Log R Ratio")
-
-write.table(cal_PFB(orig_snpdata),
-            paste(resultdir,"snpinfo",sep=""),
-            row.names=FALSE,quote = FALSE,sep = "\t")
+origsnpdata<-read.table(rawdata,header = FALSE)
+colnames(origsnpdata)=c("Name","Sample","Chr","Position","B Allele Freq","Log R Ratio")
+onesamplefile=read.table(rawonesample,header = FALSE)
+colnames(onesamplefile)=c("Name","Sample","Chr","Position","B Allele Freq","Log R Ratio")
+cal_PFB(origsnpdata,onesamplefile)
 
 
 
