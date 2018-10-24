@@ -15,6 +15,6 @@ splitsample=""
 
 #split the very large data file 
 #column 2 is the sampleID
-cd ${splitsample}
+#cd ${splitsample}
 gawk '{print $0 >> $2".txt"}' ${sourcedata}
-cd --
+#cd --

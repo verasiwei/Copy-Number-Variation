@@ -39,5 +39,8 @@ Input files: You can use the rscipts ans shellscripts here to prepare these inpu
 2. plotCN.R is used to plot.
 3. genoCN.r is used to identify genoCN
 
+Example output of plotCN.R for the case of JAK2 V617F Mutation
+
+
 
 

@@ -31,7 +31,7 @@ sampledata=lapply(file_list, function(x)
 
 
 #run genoCNV to identify CNV regions
-Thera=list()
+Theta=list()
 for (i in 1:nrow(samplelist_CNV)){
 Theta[[i]]=genoCNV(snpinfo$Name,snpinfo$Chr,snpinfo$Position,
 sampledata[[i]][,"Log R Ratio"],sampledata[[i]][,"B Allele Freq"],
