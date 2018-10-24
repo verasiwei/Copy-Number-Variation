@@ -33,8 +33,9 @@ sampledata=lapply(file_list, function(x)
 #run genoCNV to identify CNV regions
 Theta=list()
 for (i in 1:nrow(samplelist_CNV)){
+colnames(sampledata[[i]])=c("Name","Sample","Chr","Position","B Allele Freq","Log R Ratio")
 Theta[[i]]=genoCNV(snpinfo$Name,snpinfo$Chr,snpinfo$Position,
-sampledata[[i]][,"Log R Ratio"],sampledata[[i]][,"B Allele Freq"],
+sampledata[[i]][,"Log R Ratio"],sampledata[[i]][,"B Allele Freq"],snpinfo$PFB,
 sampleID=sampledata[[i]]$Sample[1],
-cnv.only=(snpinfo$PFB>1),outputSeg=TRUE,outputSNP = 1, outputTag =sampledata[[i]]$Sample[1])
+outputSeg=TRUE,outputSNP = 1, outputTag =sampledata[[i]]$Sample[1])
 }
