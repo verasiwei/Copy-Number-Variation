@@ -41,6 +41,7 @@ Input files: You can use the rscipts ans shellscripts here to prepare these inpu
 
 Example output of plotCN.R for the case of JAK2 V617F Mutation
 
+![Alt text](https://github.com/verasiwei/Copy-Number-Variation/blob/master/jak2case2.png)
 
 
 
