@@ -43,5 +43,11 @@ Example output of plotCN.R for the case of JAK2 V617F Mutation
 
 ![Alt text](https://github.com/verasiwei/Copy-Number-Variation/blob/master/jak2case2.png)
 
+Example of output of genoCN.r for the case of JAK2 V617F Mutation. The column of genotype in this example shows the loss of one allele, of which only A and B of genotype, the copy number of such genotype is 1. The Null means the copy number is 0.
+
+![Alt text](https://github.com/verasiwei/Copy-Number-Variation/blob/master/sample2_SNP_segment.jpg)
+
+
+
 
 
